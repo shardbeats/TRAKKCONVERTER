@@ -1,6 +1,6 @@
 # TRAKKCONVERTER
 
-Part of the ShardBeats **TRAKK** family (ex `SP-404MK2SimpleConverter`).
+Part of the ShardBeats **TRAKK SUITE** (ex `SP-404MK2SimpleConverter`).
 
 Convert your sound libraries (drum kits, sample packs) to a format compatible with the **Roland SP-404 MK2** sampler.
 
