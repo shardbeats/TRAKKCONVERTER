@@ -826,7 +826,7 @@ def load_app_icon() -> Optional[QIcon]:
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName("TRAKKCONVERTER")
-    app.setApplicationVersion("1.0.0")
+    app.setApplicationVersion("1.0.1")
 
     app_icon = load_app_icon()
     if app_icon is not None:

@@ -18,7 +18,7 @@ DATA_FILES = [
 
 setup(
     name="trakkconverter",
-    version="1.0.0",
+    version="1.0.1",
     description=(
         "Convert audio samples to the Roland SP-404 MK2 format "
         "(44.1 kHz, 16-bit, stereo WAV)."

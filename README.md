@@ -1,12 +1,12 @@
 # TRAKKCONVERTER
 
-> **Batch-convert any sample library to WAV the Roland SP-404MK2 accepts** — 48 kHz, 16-bit, stereo PCM. Drag and drop, folder structure preserved, portable exe, works offline.
+> **Batch-convert any sample library to WAV the Roland SP-404MK2 accepts** - 48 kHz, 16-bit, stereo PCM. Drag and drop, folder structure preserved, portable ZIP, works offline.
 
 **[Download for Windows](https://github.com/shardbeats/TRAKKCONVERTER/releases/latest)** · **[All 6 tools](https://shardbeats.github.io/tools/)** · **[Free beat pack (WAV + stems)](https://shardbeats.github.io/landing/)**
 
 <p align="center"><img src="docs/screenshot.png" alt="TRAKKCONVERTER converting a sample library to SP-404MK2 WAV" width="880"></p>
 
-Free and open source (MIT). Portable exe, no install, no account — your audio never leaves your computer.
+Free and open source (MIT). Portable ZIP, no install, no account - your audio never leaves your computer.
 
 
 Part of the ShardBeats **TRAKK SUITE** (ex `SP-404MK2SimpleConverter`).
@@ -30,7 +30,7 @@ Convert your sound libraries (drum kits, sample packs) to a format compatible wi
 ## Requirements
 - **Python 3.10+** - only needed to build or run from source
 - **FFmpeg** on the system PATH - only needed to build or run from source
-- (Recommended) The compiled `TRAKKCONVERTER.exe`, which is **fully portable**: it bundles its own FFmpeg, so the end user needs **neither Python nor FFmpeg**
+- (Recommended) The portable ZIP (`TRAKKCONVERTER-portable-<version>.zip`), which is **fully portable**: it bundles its own FFmpeg, so the end user needs **neither Python nor FFmpeg**
 
 ### Installing FFmpeg (Windows)
 1. Download from https://ffmpeg.org/download.html (the "essentials" build from gyan.dev).
@@ -72,7 +72,7 @@ python main.py
 python main.py
 ```
 
-Or just run the compiled `TRAKKCONVERTER.exe` (see build instructions below).
+Or just unzip the portable ZIP and run `TRAKKCONVERTER\TRAKKCONVERTER.exe` (see build instructions below).
 
 ### Interface
 1. **Drag & drop** folders or audio files onto the window. The conversion queue groups the samples by their source folder, showing a folder header above each group.
@@ -87,23 +87,23 @@ Or just run the compiled `TRAKKCONVERTER.exe` (see build instructions below).
 
 > **Note for Windows:** if the app is run as Administrator, Windows blocks dragging files from File Explorer (the forbidden cursor 🚫 is shown). Run it normally; the app warns you automatically if it detects elevated privileges.
 
-## Building a standalone .exe
-The build script bundles `ffmpeg.exe` and `ffprobe.exe` from your system into the executable, so the result is a single portable file.
+## Building the portable ZIP
+The build script bundles `ffmpeg.exe` and `ffprobe.exe` from your system into a one-dir app, then zips it.
 
 ```bash
 pip install pyinstaller
-python build_exe.py
+python build_portable.py
 ```
-The executable will be at `dist/TRAKKCONVERTER.exe`.
+The release artifact will be at `dist/TRAKKCONVERTER-portable-<version>.zip`.
 
 > **Requirements for the build:** FFmpeg must be installed on the machine doing the build
 > and available on its PATH (the build locates it with `shutil.which`). If FFmpeg is missing,
-> the script warns you and produces an exe that is **not** portable.
+> the script warns you and produces a build that is **not** portable.
 
 ### How the bundling works
 - `converter.py` resolves the binaries with `sys._MEIPASS` when running inside the bundle (`ffmpeg_bin()` / `ffprobe_bin()`), and falls back to the system PATH when running from source (`python main.py`).
-- `build_exe.py` passes `--add-binary "<path>\ffmpeg.exe;."` (and the same for `ffprobe.exe`) so both are extracted next to the app at runtime.
-- Everything runs from a temporary folder that PyInstaller extracts at launch, so the `.exe` is the only file the user needs. No Python, no FFmpeg, no `styles.qss` required on the target machine.
+- `build_portable.py` passes `--add-binary "<path>\ffmpeg.exe;."` (and the same for `ffprobe.exe`) so both live in `_internal\`.
+- The app runs directly from the unzipped folder: **nothing is extracted on launch** (instant startup, no `%TMP%` churn). No Python, no FFmpeg, no `styles.qss` required on the target machine.
 
 ### Custom icon
 Drop a file named **`icon.ico`** in the project folder (any size; a multi-size 16-256 px icon is recommended). The build script detects it automatically:
@@ -111,8 +111,8 @@ Drop a file named **`icon.ico`** in the project folder (any size; a multi-size 1
 - It is bundled as a resource so the running window/taskbar shows it too.
 Without `icon.ico` the build falls back to the default PyInstaller icon.
 
-> **Note:** the one-file executable is large (~118 MB) because it includes Qt + FFmpeg.
-> Some antivirus tools flag PyInstaller one-file builds; tell users it's a false positive
+> **Note:** the portable build is large (~200 MB) because it includes Qt + FFmpeg.
+> Some antivirus tools flag PyInstaller builds; tell users it's a false positive
 > or get a code-signing certificate for wider distribution.
 
 ## Supported input formats
