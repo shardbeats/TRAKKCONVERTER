@@ -1,5 +1,16 @@
 # TRAKKCONVERTER
 
+> **Batch-convert any sample library to WAV the Roland SP-404MK2 accepts** — 48 kHz, 16-bit, stereo PCM. Drag and drop, folder structure preserved, portable exe, works offline.
+
+**[Download for Windows](https://github.com/shardbeats/TRAKKCONVERTER/releases/latest)** · **[All 6 tools](https://shardbeats.github.io/tools/)** · **[Free beat pack (WAV + stems)](https://shardbeats.github.io/landing/)**
+
+<!-- Screenshot: save the image as docs/screenshot.png, then uncomment this block
+<p align="center"><img src="docs/screenshot.png" alt="TRAKKCONVERTER converting a sample library to SP-404MK2 WAV" width="880"></p>
+-->
+
+Free and open source (MIT). Portable exe, no install, no account — your audio never leaves your computer.
+
+
 Part of the ShardBeats **TRAKK SUITE** (ex `SP-404MK2SimpleConverter`).
 
 Convert your sound libraries (drum kits, sample packs) to a format compatible with the **Roland SP-404 MK2** sampler.
@@ -135,3 +146,35 @@ trakkconverter/
  README.md
 ```
 
+## TRAKK SUITE
+
+Six free, offline tools for beatmakers. They are independent: install only what you need.
+
+| Tool | What it does |
+|---|---|
+| [TRAKKSTUDIO](https://github.com/shardbeats/TRAKKSTUDIO) | Organize, convert and normalize in a single window |
+| **TRAKKCONVERTER** | Sample libraries → WAV for the Roland SP-404MK2 |
+| [TRAKKNORMALIZER](https://github.com/shardbeats/TRAKKNORMALIZER) | Per-clip peak normalization for sample packs |
+| [TRAKKNAME](https://github.com/shardbeats/TRAKKNAME) | Beat title generator (EN/ES, 20 moods) |
+| [TRAKKOUT](https://github.com/shardbeats/TRAKKOUT) | Beat + artwork → 1080p MP4 for YouTube |
+| [TRAKKLICENSE](https://github.com/shardbeats/TRAKKLICENSE) | Beat license contracts as PDF (EN/ES) |
+
+- **Website:** https://shardbeats.github.io/tools/
+- **Free beat pack (WAV + stems):** https://shardbeats.github.io/landing/
+- **Sound kits:** https://www.beatstars.com/shardbeats/sound-kits
+
+## FAQ
+
+**Is it free?** Yes. MIT licensed, free for personal and commercial use, with no account and no usage limits.
+
+**Why 48 kHz / 16-bit / stereo?** That is the SP-404MK2's internal format. Delivering anything else means the sampler resamples on import or rejects the file.
+
+**Do I need Python or FFmpeg installed?** No. The portable `.exe` bundles its own FFmpeg.
+
+**What formats can I feed it?** Anything FFmpeg decodes — MP3, AAC, FLAC, AIFF, OGG, M4A and existing WAV files. Compressed files are converted; files already at the target are copied, not re-encoded.
+
+**Will it re-convert my already-converted files?** No. Files ending in `*_sp.wav` are skipped automatically, so a mirror folder is never processed twice.
+
+**Does it work offline?** Yes. Nothing is uploaded.
+
+**Which systems?** Windows 10 and 11, 64-bit.
