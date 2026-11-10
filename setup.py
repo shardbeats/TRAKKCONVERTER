@@ -1,4 +1,4 @@
-"""TRAKKCONVERTER - pip installation.
+﻿"""TRAKKCONVERTER - pip installation.
 
 Installs the app and its dependencies so it can be launched from anywhere
 with the `trakkconverter` command.
@@ -18,7 +18,7 @@ DATA_FILES = [
 
 setup(
     name="trakkconverter",
-    version="1.0.1",
+    version="1.3.1",
     description=(
         "Convert audio samples to the Roland SP-404 MK2 format "
         "(44.1 kHz, 16-bit, stereo WAV)."

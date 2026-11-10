@@ -1,4 +1,4 @@
-"""TRAKKCONVERTER - GUI using PySide6."""
+﻿"""TRAKKCONVERTER - GUI using PySide6."""
 
 import sys
 import threading
@@ -137,7 +137,7 @@ class DropListWidget(QListWidget):
         painter.drawText(
             sub_rect,
             Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignTop,
-            "WAV · MP3 · FLAC · AIFF · OGG · M4A",
+            "WAV Â· MP3 Â· FLAC Â· AIFF Â· OGG Â· M4A",
         )
 
     def __init__(self):
@@ -826,7 +826,7 @@ def load_app_icon() -> Optional[QIcon]:
 def main():
     app = QApplication(sys.argv)
     app.setApplicationName("TRAKKCONVERTER")
-    app.setApplicationVersion("1.0.1")
+    app.setApplicationVersion("1.3.1")
 
     app_icon = load_app_icon()
     if app_icon is not None:
