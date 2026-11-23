@@ -6,7 +6,7 @@
 
 <p align="center"><img src="docs/screenshot.png" alt="TRAKKCONVERTER converting a sample library to SP-404MK2 WAV" width="880"></p>
 
-Free and open source (MIT). Portable ZIP, no install, no account - your audio never leaves your computer.
+Free and open source (GPL-3.0-only). Portable ZIP, no install, no account - your audio never leaves your computer.
 
 
 Part of the ShardBeats **TRAKK SUITE** (ex `SP-404MK2SimpleConverter`).
@@ -163,7 +163,7 @@ Six free, offline tools for beatmakers. They are independent: install only what 
 
 ## FAQ
 
-**Is it free?** Yes. MIT licensed, free for personal and commercial use, with no account and no usage limits.
+**Is it free?** Yes. GPL-3.0-only licensed, free for personal and commercial use, with no account and no usage limits.
 
 **Why 48 kHz / 16-bit / stereo?** That is the SP-404MK2's internal format. Delivering anything else means the sampler resamples on import or rejects the file.
 

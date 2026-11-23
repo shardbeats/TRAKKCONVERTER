@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent
 APP_NAME = "TRAKKCONVERTER"
 ICON_NAME = "icon.ico"
 EXE_DIR = ROOT / "dist" / "portable" / APP_NAME
-DOCS = ("README.md", "LICENSE", "NOTICE.md", "THIRD-PARTY-NOTICES.md")
+DOCS = ("README.md", "LICENSE", "LICENSING.md", "TRADEMARK.md", "NOTICE.md", "THIRD-PARTY-NOTICES.md")
 
 
 def find_ffmpeg() -> list[str]:
